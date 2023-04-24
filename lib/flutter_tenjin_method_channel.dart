@@ -43,8 +43,8 @@ class MethodChannelFlutterTenjin extends FlutterTenjinPlatform {
 
   @override
   Future<bool?> sendEventWithName(String eventName, value) async {
-    final sendEventResult =
-        await methodChannel.invokeMethod('eventWithName', {"value": value});
+    final sendEventResult = await methodChannel
+        .invokeMethod('eventWithName', {"eventName": eventName, "value": value});
     return sendEventResult;
   }
 }

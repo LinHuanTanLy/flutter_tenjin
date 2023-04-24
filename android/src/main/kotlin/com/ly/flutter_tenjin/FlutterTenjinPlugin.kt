@@ -53,6 +53,7 @@ class FlutterTenjinPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
     private fun sendEventWithName(call: MethodCall, result: Result) {
         val eventName = call.argument("eventName") as? String
         val value = call.argument("value") as? Any
+        println("the eventName is $eventName the value is $value")
         if (value != null) {
             if (value is Int) {
                 instance.eventWithNameAndValue(eventName, value)
